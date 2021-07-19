@@ -1,0 +1,67 @@
+
+class tortoise {
+ 
+
+    
+
+    static int gcd(int i, int j)
+
+    {
+
+        if (i == j)
+
+            return i;
+ 
+
+        if (i > j)
+
+            return gcd(i - j, j);
+
+        return gcd(i, j - i);
+
+    }
+ 
+
+
+    static boolean ispossible(int x, int y, int a, int b)
+
+    {
+ 
+
+        x = Math.abs(x);
+
+        y = Math.abs(y);
+
+        a = Math.abs(a);
+
+        b = Math.abs(b);
+
+
+        return (gcd(x, y) == gcd(a, b));
+
+    }
+ 
+
+  
+
+    public static void main(String[] args)
+
+    {
+ 
+
+        // Taking random coordinates and Converting coordinate into positive integer
+
+        int x = 35, y = 15;
+
+        int a = 20, b = 25;
+
+        if (ispossible(x, y, a, b))
+
+            System.out.print("Yes");
+
+        else
+
+            System.out.print("No");
+
+    }
+}
